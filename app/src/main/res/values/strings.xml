@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Netflix</string>
+    <string name="app_name">فیلیمو</string>
+    <string name="home">خانه</string>
+    <string name="coming_soon">به زودی</string>
+    <string name="favorite">علاقه مندی ها</string>
+    <string name="profile">اطلاعات کاربری</string>
 </resources>
