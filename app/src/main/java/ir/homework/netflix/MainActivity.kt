@@ -20,16 +20,6 @@ class MainActivity : AppCompatActivity() {
         forceRTLIfSupported()
     }
 
-    @SuppressLint("RestrictedApi")
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
-        if (menu is MenuBuilder) {
-            menu.setOptionalIconsVisible(true)
-        }
-        return super.onCreateOptionsMenu(menu)
-    }
-
-
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private fun forceRTLIfSupported() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {

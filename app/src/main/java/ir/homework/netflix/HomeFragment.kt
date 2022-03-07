@@ -1,14 +1,14 @@
 package ir.homework.netflix
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.view.menu.MenuBuilder
 import androidx.navigation.fragment.findNavController
 import ir.homework.netflix.databinding.FragmentHomeBinding
+
 class HomeFragment : Fragment() {
 lateinit var binding: FragmentHomeBinding
 
@@ -30,13 +30,17 @@ lateinit var binding: FragmentHomeBinding
         Toast.makeText(activity, "Fragment Home", Toast.LENGTH_LONG).show()
     }
 
+    @SuppressLint("RestrictedApi")
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_home,menu)
+        if (menu is MenuBuilder) {
+            menu.setOptionalIconsVisible(true)
+        }
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.menu_home -> {
-                Toast.makeText(activity, "click on home", Toast.LENGTH_LONG).show()
-                return true
-            }
             R.id.menu_coming_soon ->{
                 findNavController().navigate(R.id.action_homeFragment_to_comingSoonFragment)
                 return true

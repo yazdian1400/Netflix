@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home" />
+    <item android:id="@+id/menu_coming_soon"
+        android:icon="@drawable/ic_baseline_brightness_medium_24"
+        android:title="@string/coming_soon" />
+    <item android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="@string/profile" />
+</menu>
