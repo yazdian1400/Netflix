@@ -27,9 +27,15 @@ lateinit var binding: FragmentHomeBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(activity, "Fragment Home", Toast.LENGTH_LONG).show()
+        initViews()
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
+    fun initViews(){
+        Netflix.setData()
+        binding.iv1.setImageResource(Netflix.filmList[0].srcId)
+        binding.tv1.text = Netflix.filmList[0].title
+    }
     @SuppressLint("RestrictedApi")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_home,menu)

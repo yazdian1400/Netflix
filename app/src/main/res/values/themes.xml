@@ -5,6 +5,8 @@
         <item name="colorPrimary">@color/yellow1</item>
         <item name="colorPrimaryVariant">@color/yellow2</item>
         <item name="colorOnPrimary">@color/gray1</item>
+        <item name="fontFamily">@font/b_koodak_bold</item>
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/pink1</item>
         <item name="colorSecondaryVariant">@color/pink2</item>
