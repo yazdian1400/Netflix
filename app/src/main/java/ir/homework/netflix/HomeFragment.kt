@@ -34,7 +34,30 @@ lateinit var binding: FragmentHomeBinding
     fun initViews(){
         Netflix.setData()
         binding.iv1.setImageResource(Netflix.filmList[0].srcId)
+        binding.iv2.setImageResource(Netflix.filmList[1].srcId)
+        binding.iv3.setImageResource(Netflix.filmList[2].srcId)
+        binding.iv4.setImageResource(Netflix.filmList[3].srcId)
+        binding.iv5.setImageResource(Netflix.filmList[4].srcId)
+        binding.iv6.setImageResource(Netflix.filmList[5].srcId)
+        binding.iv7.setImageResource(Netflix.filmList[6].srcId)
+        binding.iv8.setImageResource(Netflix.filmList[7].srcId)
+        binding.iv9.setImageResource(Netflix.filmList[8].srcId)
+        binding.iv10.setImageResource(Netflix.filmList[9].srcId)
+        binding.iv11.setImageResource(Netflix.filmList[10].srcId)
+        binding.iv12.setImageResource(Netflix.filmList[11].srcId)
+
         binding.tv1.text = Netflix.filmList[0].title
+        binding.tv2.text = Netflix.filmList[1].title
+        binding.tv3.text = Netflix.filmList[2].title
+        binding.tv4.text = Netflix.filmList[3].title
+        binding.tv5.text = Netflix.filmList[4].title
+        binding.tv6.text = Netflix.filmList[5].title
+        binding.tv7.text = Netflix.filmList[6].title
+        binding.tv8.text = Netflix.filmList[7].title
+        binding.tv9.text = Netflix.filmList[8].title
+        binding.tv10.text = Netflix.filmList[9].title
+        binding.tv11.text = Netflix.filmList[10].title
+        binding.tv12.text = Netflix.filmList[11].title
     }
     @SuppressLint("RestrictedApi")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
