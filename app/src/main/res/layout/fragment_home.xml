@@ -20,28 +20,22 @@
 
                 <ImageView
                     android:id="@+id/iv_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/style_image_view_1"
                     app:layout_constraintBottom_toTopOf="@+id/tv_1"
                     app:layout_constraintEnd_toEndOf="@+id/cl_1"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/cl_1"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_margin="4dp"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/style_text_view_1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/cl_1"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="@+id/cl_1"
                     app:layout_constraintTop_toBottomOf="@+id/iv_1"
-                    tools:text="فیلم1"
-                    android:textSize="16sp"
-                    android:padding="2dp"
-                    android:layout_margin="2dp"/>
+                    tools:text="فیلم1"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_2"
