@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         forceRTLIfSupported()
+        Netflix.setData()
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)

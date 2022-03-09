@@ -77,7 +77,6 @@ lateinit var binding: FragmentHomeBinding
     }
     @SuppressLint("UseCompatLoadingForDrawables")
     fun initViews(){
-        Netflix.setData()
         binding.iv1.setImageResource(Netflix.filmList[0].srcId)
         binding.iv2.setImageResource(Netflix.filmList[1].srcId)
         binding.iv3.setImageResource(Netflix.filmList[2].srcId)

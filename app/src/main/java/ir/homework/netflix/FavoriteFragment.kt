@@ -1,17 +1,20 @@
 package ir.homework.netflix
 
 import android.annotation.SuppressLint
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.Toast
 import androidx.appcompat.view.menu.MenuBuilder
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import ir.homework.netflix.databinding.FragmentFavoriteBinding
-import ir.homework.netflix.databinding.FragmentHomeBinding
 
 class FavoriteFragment : Fragment() {
     lateinit var binding: FragmentFavoriteBinding
+    var numPage = 1
+    var likedFilms = mutableListOf<Film>()
+    private var numLikedFilm = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,58 @@ class FavoriteFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initViews()
+        setOnClickListeners()
+    }
+
+    private fun setOnClickListeners(){
+        binding.ivNext.setOnClickListener{
+            nextPage()
+        }
+        binding.ivPrev.setOnClickListener{
+            prevPage()
+        }
+    }
+    private fun initViews(){
+        likedFilms = Netflix.filmList.filter { it.hasLiked }.toMutableList()
+        numLikedFilm = likedFilms.size
+        if (numLikedFilm > 0) {
+            binding.ivFavorite.setImageResource(likedFilms[0].srcId)
+            binding.tvTitle.text = likedFilms[0].title
+        } else {
+            binding.ivFavorite.isVisible = false
+            binding.tvTitle.isVisible = false
+            binding.ivNext.isVisible = false
+            binding.ivPrev.isVisible = false
+        }
+        binding.ivPrev.setImageResource(R.drawable.ic_baseline_arrow_back_ios_24_disabled)
+        if (1 == numLikedFilm)
+            binding.ivNext.setImageResource(R.drawable.ic_baseline_arrow_forward_ios_24_disabled)
+    }
+
+    fun nextPage(){
+        if (numPage + 1 <= numLikedFilm){
+            numPage ++
+            if (numPage == numLikedFilm)
+                binding.ivNext.setImageResource(R.drawable.ic_baseline_arrow_forward_ios_24_disabled)
+            binding.ivPrev.setImageResource(R.drawable.ic_baseline_arrow_back_ios_24)
+            binding.ivFavorite.setImageResource(likedFilms[numPage - 1].srcId)
+            binding.tvTitle.text = likedFilms[numPage - 1].title
+        }
+    }
+
+    fun prevPage(){
+        if (numPage - 1 >= 1){
+            numPage --
+            if (numPage == 1)
+                binding.ivPrev.setImageResource(R.drawable.ic_baseline_arrow_back_ios_24_disabled)
+            binding.ivNext.setImageResource(R.drawable.ic_baseline_arrow_forward_ios_24)
+            binding.ivFavorite.setImageResource(likedFilms[numPage - 1].srcId)
+            binding.tvTitle.text = likedFilms[numPage - 1].title
+        }
+    }
     @SuppressLint("RestrictedApi")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_favorite,menu)
