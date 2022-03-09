@@ -2,6 +2,7 @@ package ir.homework.netflix
 
 object Netflix {
     var filmList = mutableListOf<Film>()
+    var comingSoonList = mutableListOf<Film>()
 
     fun setData(){
         filmList.clear()
@@ -17,5 +18,10 @@ object Netflix {
         filmList.add(Film("رستم و سهراب",R.drawable.rostam_va_sohrab, false))
         filmList.add(Film("سوم شخص",R.drawable.sevvom_shakhs, false))
         filmList.add(Film("شهر موش ها",R.drawable.shahr_mushha, false))
+
+        comingSoonList.clear()
+        comingSoonList.add(Film("پیشونی سفید3", R.drawable.pishuni_sefid_3, false))
+        comingSoonList.add(Film("خنگول و منگول", R.drawable.khengul_o_mangul, false))
+        comingSoonList.add(Film("23 نفر", R.drawable.nafar_23, false))
     }
 }

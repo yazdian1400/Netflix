@@ -27,6 +27,22 @@ class ComingSoonFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initViews()
+    }
+
+    private fun initViews() {
+        binding.ivSoon1.setImageResource(Netflix.comingSoonList[0].srcId)
+        binding.ivSoon2.setImageResource(Netflix.comingSoonList[1].srcId)
+        binding.ivSoon3.setImageResource(Netflix.comingSoonList[2].srcId)
+
+        binding.tvSoon1.text = Netflix.comingSoonList[0].title
+        binding.tvSoon2.text = Netflix.comingSoonList[1].title
+        binding.tvSoon3.text = Netflix.comingSoonList[2].title
+    }
+
     @SuppressLint("RestrictedApi")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_coming_soon,menu)
