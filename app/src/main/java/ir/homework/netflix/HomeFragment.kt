@@ -3,6 +3,7 @@ package ir.homework.netflix
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.appcompat.view.menu.MenuBuilder
@@ -28,8 +29,52 @@ lateinit var binding: FragmentHomeBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        setOnClickListeners()
     }
 
+    fun setOnClickListeners(){
+        binding.iv1.setOnClickListener{
+            onFilmClick(1, binding.ivFavorite1)
+        }
+        binding.iv2.setOnClickListener{
+            onFilmClick(2, binding.ivFavorite2)
+        }
+        binding.iv3.setOnClickListener{
+            onFilmClick(3, binding.ivFavorite3)
+        }
+        binding.iv4.setOnClickListener{
+            onFilmClick(4, binding.ivFavorite4)
+        }
+        binding.iv5.setOnClickListener{
+            onFilmClick(5, binding.ivFavorite5)
+        }
+        binding.iv6.setOnClickListener{
+            onFilmClick(6, binding.ivFavorite6)
+        }
+        binding.iv7.setOnClickListener{
+            onFilmClick(7, binding.ivFavorite7)
+        }
+        binding.iv8.setOnClickListener{
+            onFilmClick(8, binding.ivFavorite8)
+        }
+        binding.iv9.setOnClickListener{
+            onFilmClick(9, binding.ivFavorite9)
+        }
+        binding.iv10.setOnClickListener{
+            onFilmClick(10, binding.ivFavorite10)
+        }
+        binding.iv11.setOnClickListener{
+            onFilmClick(11, binding.ivFavorite11)
+        }
+        binding.iv12.setOnClickListener{
+            onFilmClick(12, binding.ivFavorite12)
+        }
+    }
+
+    fun onFilmClick(num: Int, view: ImageView){
+        Netflix.filmList[num - 1].hasLiked = true
+        view.setImageResource(R.drawable.ic_baseline_favorite_24)
+    }
     @SuppressLint("UseCompatLoadingForDrawables")
     fun initViews(){
         Netflix.setData()
@@ -59,6 +104,7 @@ lateinit var binding: FragmentHomeBinding
         binding.tv11.text = Netflix.filmList[10].title
         binding.tv12.text = Netflix.filmList[11].title
     }
+
     @SuppressLint("RestrictedApi")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_home,menu)

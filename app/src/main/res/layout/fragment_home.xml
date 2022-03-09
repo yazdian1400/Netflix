@@ -35,6 +35,13 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_1"
                     app:layout_constraintTop_toBottomOf="@+id/iv_1"
                     tools:text="فیلم1"/>
+                <ImageView
+                    android:id="@+id/iv_favorite_1"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_1"
+                    app:layout_constraintEnd_toEndOf="@id/iv_1"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_2"
@@ -59,6 +66,12 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_2"
                     app:layout_constraintTop_toBottomOf="@+id/iv_2"
                     tools:text="فیلم2"/>
+                <ImageView
+                    android:id="@+id/iv_favorite_2"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_2"
+                    app:layout_constraintEnd_toEndOf="@id/iv_2"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -84,6 +97,13 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_3"
                     app:layout_constraintTop_toBottomOf="@+id/iv_3"
                     tools:text="فیلم3"/>
+
+                <ImageView
+                    android:id="@+id/iv_favorite_3"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_3"
+                    app:layout_constraintEnd_toEndOf="@id/iv_3"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
@@ -116,6 +136,14 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_4"
                     app:layout_constraintTop_toBottomOf="@+id/iv_4"
                     tools:text="فیلم4"/>
+
+                <ImageView
+                    android:id="@+id/iv_favorite_4"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_4"
+                    app:layout_constraintEnd_toEndOf="@id/iv_4"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_5"
@@ -141,6 +169,13 @@
                     app:layout_constraintTop_toBottomOf="@+id/iv_5"
                     tools:text="فیلم5"/>
 
+                <ImageView
+                    android:id="@+id/iv_favorite_5"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_5"
+                    app:layout_constraintEnd_toEndOf="@id/iv_5"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_6"
@@ -165,6 +200,13 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_6"
                     app:layout_constraintTop_toBottomOf="@+id/iv_6"
                     tools:text="فیلم6"/>
+
+                <ImageView
+                    android:id="@+id/iv_favorite_6"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_6"
+                    app:layout_constraintEnd_toEndOf="@id/iv_6"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
@@ -196,6 +238,14 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_7"
                     app:layout_constraintTop_toBottomOf="@+id/iv_7"
                     tools:text="فیلم7"/>
+
+                <ImageView
+                    android:id="@+id/iv_favorite_7"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_7"
+                    app:layout_constraintEnd_toEndOf="@id/iv_7"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_8"
@@ -221,6 +271,13 @@
                     app:layout_constraintTop_toBottomOf="@+id/iv_8"
                     tools:text="فیلم8"/>
 
+                <ImageView
+                    android:id="@+id/iv_favorite_8"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_8"
+                    app:layout_constraintEnd_toEndOf="@id/iv_8"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_9"
@@ -245,6 +302,13 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_9"
                     app:layout_constraintTop_toBottomOf="@+id/iv_9"
                     tools:text="فیلم9"/>
+
+                <ImageView
+                    android:id="@+id/iv_favorite_9"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_9"
+                    app:layout_constraintEnd_toEndOf="@id/iv_9"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
@@ -276,6 +340,14 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_10"
                     app:layout_constraintTop_toBottomOf="@+id/iv_10"
                     tools:text="فیلم10"/>
+
+                <ImageView
+                    android:id="@+id/iv_favorite_10"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_10"
+                    app:layout_constraintEnd_toEndOf="@id/iv_10"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_11"
@@ -301,6 +373,13 @@
                     app:layout_constraintTop_toBottomOf="@+id/iv_11"
                     tools:text="فیلم11"/>
 
+                <ImageView
+                    android:id="@+id/iv_favorite_11"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_11"
+                    app:layout_constraintEnd_toEndOf="@id/iv_11"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_12"
@@ -325,6 +404,13 @@
                     app:layout_constraintStart_toStartOf="@+id/cl_12"
                     app:layout_constraintTop_toBottomOf="@+id/iv_12"
                     tools:text="فیلم12"/>
+
+                <ImageView
+                    android:id="@+id/iv_favorite_12"
+                    style="@style/style_image_view_2"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_12"
+                    app:layout_constraintEnd_toEndOf="@id/iv_12"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
