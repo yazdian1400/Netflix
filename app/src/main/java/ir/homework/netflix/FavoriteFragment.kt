@@ -47,13 +47,17 @@ class FavoriteFragment : Fragment() {
         likedFilms = Netflix.filmList.filter { it.hasLiked }.toMutableList()
         numLikedFilm = likedFilms.size
         if (numLikedFilm > 0) {
+            binding.tvMessageFavorite.isVisible = false
             binding.ivFavorite.setImageResource(likedFilms[0].srcId)
             binding.tvTitle.text = likedFilms[0].title
         } else {
+            binding.tvMessageFavorite.isVisible = true
+            binding.tvMessageFavorite.text = "فیلمی انتخاب نشده است."
             binding.ivFavorite.isVisible = false
             binding.tvTitle.isVisible = false
             binding.ivNext.isVisible = false
             binding.ivPrev.isVisible = false
+
         }
         binding.ivPrev.setImageResource(R.drawable.ic_baseline_arrow_back_ios_24_disabled)
         if (1 == numLikedFilm)
