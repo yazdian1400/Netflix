@@ -72,8 +72,13 @@ lateinit var binding: FragmentHomeBinding
     }
 
     fun onFilmClick(num: Int, view: ImageView){
-        Netflix.filmList[num - 1].hasLiked = true
-        view.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if(Netflix.filmList[num - 1].hasLiked){
+            Netflix.filmList[num - 1].hasLiked = false
+            view.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+        } else {
+            Netflix.filmList[num - 1].hasLiked = true
+            view.setImageResource(R.drawable.ic_baseline_favorite_24)
+        }
     }
     @SuppressLint("UseCompatLoadingForDrawables")
     fun initViews(){
@@ -102,6 +107,31 @@ lateinit var binding: FragmentHomeBinding
         binding.tv10.text = Netflix.filmList[9].title
         binding.tv11.text = Netflix.filmList[10].title
         binding.tv12.text = Netflix.filmList[11].title
+
+        if (Netflix.filmList[0].hasLiked)
+            binding.ivFavorite1.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[1].hasLiked)
+            binding.ivFavorite2.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[2].hasLiked)
+            binding.ivFavorite3.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[3].hasLiked)
+            binding.ivFavorite4.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[4].hasLiked)
+            binding.ivFavorite5.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[5].hasLiked)
+            binding.ivFavorite6.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[6].hasLiked)
+            binding.ivFavorite7.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[7].hasLiked)
+            binding.ivFavorite8.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[8].hasLiked)
+            binding.ivFavorite9.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[9].hasLiked)
+            binding.ivFavorite10.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[10].hasLiked)
+            binding.ivFavorite11.setImageResource(R.drawable.ic_baseline_favorite_24)
+        if (Netflix.filmList[11].hasLiked)
+            binding.ivFavorite12.setImageResource(R.drawable.ic_baseline_favorite_24)
     }
 
     @SuppressLint("RestrictedApi")

@@ -81,6 +81,7 @@ class FavoriteFragment : Fragment() {
             binding.tvTitle.text = likedFilms[numPage - 1].title
         }
     }
+
     @SuppressLint("RestrictedApi")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_favorite,menu)
