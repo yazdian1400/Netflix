@@ -16,6 +16,7 @@ class ShowInfoFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -57,15 +58,15 @@ class ShowInfoFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_home -> {
-                findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
+                findNavController().navigate(R.id.action_showInfoFragment_to_homeFragment)
                 return true
             }
             R.id.menu_coming_soon ->{
-                findNavController().navigate(R.id.action_profileFragment_to_comingSoonFragment)
+                findNavController().navigate(R.id.action_showInfoFragment_to_comingSoonFragment)
                 return true
             }
             R.id.menu_favorite ->{
-                findNavController().navigate(R.id.action_profileFragment_to_favoriteFragment)
+                findNavController().navigate(R.id.action_showInfoFragment_to_favoriteFragment)
                 return true
             }
             else -> super.onOptionsItemSelected(item)

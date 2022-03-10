@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/tv_title1"
         style="@style/style_text_view_title"
-        android:text="فرم ثبت اطلاعات" />
+        android:text="ثبت اطلاعات کاربر" />
 
     <EditText
         android:id="@+id/et_name"

@@ -8,7 +8,7 @@
 
     <TextView
         style="@style/style_text_view_title"
-        android:text="مشاهده اطلاعات ثبت شده"/>
+        android:text="مشخصات کاربر"/>
     <TextView
         android:id="@+id/tv_full_name"
         tools:text="@string/full_name"

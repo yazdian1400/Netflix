@@ -154,7 +154,10 @@ lateinit var binding: FragmentHomeBinding
                 return true
             }
             R.id.menu_profile ->{
-                findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+                when (Netflix.hasRegistered){
+                    true -> findNavController().navigate(R.id.action_homeFragment_to_showInfoFragment)
+                    else -> findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+                }
                 return true
             }
             else -> super.onOptionsItemSelected(item)
