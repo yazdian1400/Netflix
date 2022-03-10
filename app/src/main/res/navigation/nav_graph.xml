@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_showInfoFragment"
+            app:destination="@id/showInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/comingSoonFragment"
@@ -40,6 +43,9 @@
         <action
             android:id="@+id/action_comingSoonFragment_to_favoriteFragment3"
             app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_comingSoonFragment_to_showInfoFragment"
+            app:destination="@id/showInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -55,6 +61,9 @@
         <action
             android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_showInfoFragment"
+            app:destination="@id/showInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -70,5 +79,26 @@
         <action
             android:id="@+id/action_favoriteFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_showInfoFragment"
+            app:destination="@id/showInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showInfoFragment"
+        android:name="ir.homework.netflix.ShowInfoFragment"
+        android:label="fragment_show_info"
+        tools:layout="@layout/fragment_show_info" >
+        <action
+            android:id="@+id/action_showInfoFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_showInfoFragment_to_comingSoonFragment"
+            app:destination="@id/comingSoonFragment" />
+        <action
+            android:id="@+id/action_showInfoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_showInfoFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
     </fragment>
 </navigation>

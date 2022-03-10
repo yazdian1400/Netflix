@@ -9,46 +9,35 @@ import androidx.appcompat.view.menu.MenuBuilder
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ir.homework.netflix.databinding.FragmentProfileBinding
+import ir.homework.netflix.databinding.FragmentShowInfoBinding
 
-class ProfileFragment : Fragment() {
-    lateinit var binding: FragmentProfileBinding
+class ShowInfoFragment : Fragment() {
+    lateinit var binding: FragmentShowInfoBinding
     lateinit var sharedPreferences: SharedPreferences
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
+        // Inflate the layout for this fragment
+        binding = FragmentShowInfoBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setOnClickListeners()
+
+        initViews()
     }
 
-    private fun setOnClickListeners(){
-        binding.btnSubmit.setOnClickListener{
-            if (binding.etName.text.isNullOrBlank()){
-                binding.etName.error = "لطفا نام و نام خانوادگی خود را وارد کنید."
-            } else if (binding.etEmail.text.isNullOrBlank()) {
-                binding.etEmail.error = "لطفا آدرس ایمیل خود را وارد کنید."
-            } else {
-                Netflix.hasRegistered = true
-                val editor = sharedPreferences.edit()
-                editor.putString("fullName", binding.etName.text.toString())
-                editor.putString("email", binding.etEmail.text.toString())
-                editor.putString("phoneNumber", binding.etEmail.text.toString())
-                editor.putString("username", binding.etUsername.text.toString())
-                editor.apply()
-                findNavController().navigate(R.id.action_profileFragment_to_showInfoFragment)
-            }
-        }
+    private fun initViews() {
+        binding.tvFullName.text = "نام و نام خانوادگی: " + sharedPreferences.getString("fullName", "")
+        binding.tvEmail.text = "آدرس ایمیل: " + sharedPreferences.getString("email", "")
+        binding.tvPhoneNumber.text = "شماره تلفن: " + sharedPreferences.getString("phoneNumber", "")
+        binding.tvUsername.text = "نام کاربری: " + sharedPreferences.getString("username", "")
     }
 
     override fun onAttach(context: Context) {

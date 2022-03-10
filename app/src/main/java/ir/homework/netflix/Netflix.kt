@@ -3,6 +3,7 @@ package ir.homework.netflix
 object Netflix {
     var filmList = mutableListOf<Film>()
     var comingSoonList = mutableListOf<Film>()
+    var hasRegistered = false
 
     fun setData(){
         filmList.clear()
