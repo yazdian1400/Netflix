@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile"
-        android:textSize="60sp"
-        android:background="@color/purple_200"/>
+        android:id="@+id/tv_title1"
+        style="@style/style_text_view_title"
+        android:text="فرم ثبت اطلاعات" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/et_name"
+        style="@style/style_edit_text_1"
+        android:hint="@string/full_name"
+        android:inputType="textPersonName"
+        android:textColorHighlight="@color/yellow1"
+        tools:text="@string/full_name" />
+
+    <EditText
+        android:id="@+id/et_email"
+        style="@style/style_edit_text_1"
+        android:hint="@string/email"
+        android:inputType="number"
+        android:textColorHighlight="@color/yellow1"
+        tools:text="@string/email" />
+
+    <EditText
+        android:id="@+id/et_phone_number"
+        style="@style/style_edit_text_1"
+        android:hint="@string/phone_number"
+        android:textColorHighlight="@color/yellow1"
+        tools:text="@string/phone_number" />
+
+    <EditText
+        android:id="@+id/et_username"
+        style="@style/style_edit_text_1"
+        android:hint="@string/username"
+        android:inputType="textLongMessage"
+        android:textColorHighlight="@color/yellow1"
+        tools:text="@string/username" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_submit"
+        style="@style/style_button1"
+        android:text="ثبت اطلاعات"
+        app:cornerRadius="64dp"/>
+
+</LinearLayout>
