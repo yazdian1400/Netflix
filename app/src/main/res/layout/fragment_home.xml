@@ -36,11 +36,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/iv_1"
                     tools:text="فیلم1"/>
                 <ImageView
-                    android:id="@+id/iv_favorite_1"
-                    style="@style/style_image_view_2"
-                    android:src="@drawable/ic_baseline_favorite_border_24"
-                    app:layout_constraintBottom_toBottomOf="@id/iv_1"
-                    app:layout_constraintEnd_toEndOf="@id/iv_1"/>
+                android:id="@+id/iv_favorite_1"
+                style="@style/style_image_view_2"
+                android:src="@drawable/ic_baseline_favorite_border_24"
+                app:layout_constraintBottom_toBottomOf="@id/iv_1"
+                app:layout_constraintEnd_toEndOf="@id/iv_1"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout

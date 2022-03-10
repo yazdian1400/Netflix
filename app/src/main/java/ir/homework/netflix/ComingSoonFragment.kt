@@ -1,14 +1,13 @@
 package ir.homework.netflix
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
-import android.widget.Toast
 import androidx.appcompat.view.menu.MenuBuilder
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ir.homework.netflix.databinding.FragmentComingSoonBinding
-import ir.homework.netflix.databinding.FragmentHomeBinding
 
 
 class ComingSoonFragment : Fragment() {
@@ -31,6 +30,7 @@ class ComingSoonFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initViews()
+        setOnClickListeners()
     }
 
     private fun initViews() {
@@ -41,6 +41,37 @@ class ComingSoonFragment : Fragment() {
         binding.tvSoon1.text = Netflix.comingSoonList[0].title
         binding.tvSoon2.text = Netflix.comingSoonList[1].title
         binding.tvSoon3.text = Netflix.comingSoonList[2].title
+    }
+
+    private fun setOnClickListeners() {
+        binding.ivShare1.setOnClickListener{
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, Netflix.comingSoonList[0].title)
+                type = "text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
+
+        binding.ivShare2.setOnClickListener{
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, Netflix.comingSoonList[1].title)
+                type = "text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
+        binding.ivShare3.setOnClickListener{
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, Netflix.comingSoonList[2].title)
+                type = "text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
     }
 
     @SuppressLint("RestrictedApi")
