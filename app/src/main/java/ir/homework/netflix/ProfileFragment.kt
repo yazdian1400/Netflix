@@ -1,17 +1,18 @@
 package ir.homework.netflix
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
-import android.widget.Toast
 import androidx.appcompat.view.menu.MenuBuilder
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import ir.homework.netflix.databinding.FragmentHomeBinding
 import ir.homework.netflix.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
     lateinit var binding: FragmentProfileBinding
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,34 @@ class ProfileFragment : Fragment() {
     ): View? {
         binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setOnClickListeners()
+    }
+
+    private fun setOnClickListeners(){
+        binding.btnSubmit.setOnClickListener{
+            if (binding.etName.text.isNullOrBlank()){
+                binding.etName.error = "لطفا نام و نام خانوادگی خود را وارد کنید."
+            } else if (binding.etEmail.text.isNullOrBlank()) {
+                binding.etEmail.error = "لطفا آدرس ایمیل خود را وارد کنید."
+            } else {
+                val editor = sharedPreferences.edit()
+                editor.putBoolean("hasRegistered" , true)
+                editor.putString("fullName", binding.etName.text.toString())
+                editor.putString("email", binding.etEmail.text.toString())
+                editor.putString("phoneNumber", binding.etEmail.text.toString())
+                editor.putString("username", binding.etUsername.text.toString())
+                editor.apply()
+            }
+        }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        sharedPreferences = context.getSharedPreferences("pref", Context.MODE_PRIVATE)
     }
 
     @SuppressLint("RestrictedApi")

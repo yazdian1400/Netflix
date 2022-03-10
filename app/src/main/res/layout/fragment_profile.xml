@@ -24,7 +24,7 @@
         android:id="@+id/et_email"
         style="@style/style_edit_text_1"
         android:hint="@string/email"
-        android:inputType="number"
+        android:inputType="textEmailAddress"
         android:textColorHighlight="@color/yellow1"
         tools:text="@string/email" />
 
@@ -32,6 +32,7 @@
         android:id="@+id/et_phone_number"
         style="@style/style_edit_text_1"
         android:hint="@string/phone_number"
+        android:inputType="number"
         android:textColorHighlight="@color/yellow1"
         tools:text="@string/phone_number" />
 
