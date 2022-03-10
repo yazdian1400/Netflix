@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.view.menu.MenuBuilder
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ir.homework.netflix.databinding.FragmentProfileBinding
@@ -37,8 +38,15 @@ class ShowInfoFragment : Fragment() {
     private fun initViews() {
         binding.tvFullName.text = "نام و نام خانوادگی: " + sharedPreferences.getString("fullName", "")
         binding.tvEmail.text = "آدرس ایمیل: " + sharedPreferences.getString("email", "")
-        binding.tvPhoneNumber.text = "شماره تلفن: " + sharedPreferences.getString("phoneNumber", "")
-        binding.tvUsername.text = "نام کاربری: " + sharedPreferences.getString("username", "")
+        val phoneNumber = sharedPreferences.getString("phoneNumber", "")
+        if (!phoneNumber.isNullOrBlank()) {
+            binding.tvPhoneNumber.text =
+                "شماره تلفن: " + phoneNumber
+        } else  binding.tvPhoneNumber.isVisible = false
+        val username = sharedPreferences.getString("username", "")
+        if (!username.isNullOrBlank()) {
+            binding.tvUsername.text = "نام کاربری: " + username
+        } else  binding.tvUsername.isVisible = false
     }
 
     override fun onAttach(context: Context) {

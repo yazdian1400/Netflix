@@ -43,7 +43,7 @@ class ProfileFragment : Fragment() {
                 val editor = sharedPreferences.edit()
                 editor.putString("fullName", binding.etName.text.toString())
                 editor.putString("email", binding.etEmail.text.toString())
-                editor.putString("phoneNumber", binding.etEmail.text.toString())
+                editor.putString("phoneNumber", binding.etPhoneNumber.text.toString())
                 editor.putString("username", binding.etUsername.text.toString())
                 editor.apply()
                 findNavController().navigate(R.id.action_profileFragment_to_showInfoFragment)

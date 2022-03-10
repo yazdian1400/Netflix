@@ -46,7 +46,15 @@ class FavoriteFragment : Fragment() {
     private fun initViews(){
         likedFilms = Netflix.filmList.filter { it.hasLiked }.toMutableList()
         numLikedFilm = likedFilms.size
-        if (numLikedFilm > 0) {
+        if (!Netflix.hasRegistered){
+            binding.tvMessageFavorite.isVisible = true
+            binding.tvMessageFavorite.text = "شما هنوز ثبت نام نکرده اید!"
+            binding.ivFavorite.isVisible = false
+            binding.tvTitle.isVisible = false
+            binding.ivNext.isVisible = false
+            binding.ivPrev.isVisible = false
+        }
+        else if (numLikedFilm > 0) {
             binding.tvMessageFavorite.isVisible = false
             binding.ivFavorite.setImageResource(likedFilms[0].srcId)
             binding.tvTitle.text = likedFilms[0].title

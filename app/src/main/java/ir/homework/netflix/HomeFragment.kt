@@ -72,12 +72,16 @@ lateinit var binding: FragmentHomeBinding
     }
 
     fun onFilmClick(num: Int, view: ImageView){
-        if(Netflix.filmList[num - 1].hasLiked){
-            Netflix.filmList[num - 1].hasLiked = false
-            view.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+        if (Netflix.hasRegistered) {
+            if (Netflix.filmList[num - 1].hasLiked) {
+                Netflix.filmList[num - 1].hasLiked = false
+                view.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+            } else {
+                Netflix.filmList[num - 1].hasLiked = true
+                view.setImageResource(R.drawable.ic_baseline_favorite_24)
+            }
         } else {
-            Netflix.filmList[num - 1].hasLiked = true
-            view.setImageResource(R.drawable.ic_baseline_favorite_24)
+            Toast.makeText(activity, "شما هنوز ثبت نام نکرده اید!", Toast.LENGTH_LONG).show()
         }
     }
     @SuppressLint("UseCompatLoadingForDrawables")
